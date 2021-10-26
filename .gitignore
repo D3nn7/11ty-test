@@ -1,0 +1,30 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# via script generated files
+!script_generated_files
+script_generated_files/*
+!script_generated_files/README.md
+
+# pwa file
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
