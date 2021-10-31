@@ -1,5 +1,16 @@
 {
+  "scripts": {
+    "tailwind:process": "npx postcss css/global.css -o src/_includes/styles/global.css --watch",
+    "start": "concurrently \"npm run tailwind:process\" \"npm run serve\"",
+    "serve": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.3.0",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.18"
   }
 }

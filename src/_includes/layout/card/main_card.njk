@@ -1,0 +1,18 @@
+{% import 'static/_constants.njk' as constants %}
+
+{% macro MainCard() %}
+    <article class="rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg mb-20">
+        <img
+            src="/assets/images/Testbild.svg"
+            alt="{{constants.SITE_NAME}} Banner Image"
+            title="{{constants.SITE_NAME}} Banner Image"
+            layout="responsive"
+            width="500"
+            height="500"
+        />
+        <h1 class="m-1 p-3 mb-2 border-gray-100 border-b-2">{{constants.SITE_WELCOME_TEXT}}</h1>
+        <div class="p-5">
+            <p>{{constants.SITE_WELCOME_DESC}}</p>
+        </div>
+    </article>
+{% endmacro %}

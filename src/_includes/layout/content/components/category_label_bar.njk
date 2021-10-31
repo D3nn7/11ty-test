@@ -1,0 +1,15 @@
+// TODO add fontawesome to labelbar
+{% macro CategoryLabelBar(categories = null) %}
+    {% if categories %}
+        <div class="flex flex-wrap gap-1 m-1 border-b-2 border-gray-100 pb-1 items-center">
+            <div class="w-1/12 border-gray-200 border-t-0 border-l-0 border-b-0 border-r-2 text-center">
+                Tags
+            </div>
+            <div class="w-10/12 flex flex-wrap gap-2 ml-1">
+                {% for category in categories %}
+                    <span class="p-1 bg-gray-100 rounded-md">{{category}}</span>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,4 @@
+{
+    "tags": "blog",
+    "layout": "layout/content/header/with_full_header.njk"
+}

@@ -1,0 +1,37 @@
+---
+layout: 'base.njk'
+---
+// TODO markdown content style
+// TODO member contact data
+
+{% import 'layout/post/posts_by_author.njk' as PostsByAuthor with context %}
+{% import 'layout/content/components/post_title.njk' as PostTitle with context%}
+
+<div class="2xl:flex 2xl:gap-2 2xl:items-start">
+    <section class="rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg 2xl:w-2/3">
+        <div>
+            {% if heroImage %}
+                <img src="{{page.url}}{{heroImage}}" layout="responsive" width="400" height="225" alt="Image of {{title}}" title="Image of {{title}}" />
+            {% endif %}
+            {% if avatar %}
+                <div class="p-2 relative -mt-1/4 sm:-mt-1/5 md:-mt-1/8 bg-white inline-block rounded-full inset-x-1/2 transform -translate-x-1/2"><Image src="{{page.url}}{{avatar}}"layout="fixed" width="200" height="200" alt="Avatar of {{title}}" title="Avatar of {{title}}" class="rounded-full"/></div>
+            {% endif %}
+        </div>
+        {{ PostTitle.SimplePostTitle(title, createdAt, changedAt) }}
+        <article>
+            <div class="p-5">
+             {{ content | safe }}
+            </div>
+        </article>
+    </section>
+    {% if (showSocialMediaContectData and socialMediaContactData) or (showAddress and address) %}
+        <aside class="p-4 mt-2 rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg 2xl:mt-0 2xl:w-1/3">
+            <h3>Contact</h3>
+            {% if showSocialMediaContectData and socialMediaContactData %}
+            {% endif %}
+            {% if showAddress and address %}
+            {% endif %}
+        </aside>
+    {% endif %}
+</div>
+{{ PostsByAuthor.PostsByAuthor(page.fileSlug) }}

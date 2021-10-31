@@ -1,0 +1,16 @@
+{% macro SubCard(title, description, thumbnailurl = null, link) %}
+{{thumbnailurl}}
+    <article class="text-center rounded-lg transform hover:scale-103 duration-300 motion-reduce:transform-none bg-white shadow-lg overflow-hidden mb-8 md:w-2-cards-in-row xl:w-4-cards-in-row p-5">
+            {% if thumbnailurl and thumbnailurl | trim %}
+                <img
+                    src={{thumbnailurl}}
+                    alt="Image for {{title}}"
+                    title="Image for {{title}}"
+                    width="200"
+                    height="200"
+                />
+            {% endif %}
+            <a href="{{link}}" class="block mb-2 border-gray-100 border-b-2 hover:underline"><h1 class="block">{{title}}</h1></a>
+            <p>{{description}}</p>
+        </article>
+{% endmacro %}

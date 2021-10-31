@@ -1,0 +1,16 @@
+{% import 'layout/content/components/date_info.njk' as DateInfo %}
+{% import 'layout/content/components/preview.njk' as Preview with context %}
+
+{% macro SimplePostTitle(title, createdat, changedat) %}
+    {{ PostTitle(title, createdat, changedat)}}
+{% endmacro %}
+
+{% macro PostTitle(title, createdat, changedat, author) %}
+    <div class="m-1 p-3 mb-2 border-gray-100 border-b-2">
+        <h1>{{title}}</h1>
+        <div class="sm:flex gap-2 items-center">
+            {{ Preview.AuthorPreview(author, collections.team) }}
+            {{ DateInfo.DateInfo(createdat, changedat) }}
+        </div>
+    </div>
+{% endmacro %}

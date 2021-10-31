@@ -1,0 +1,15 @@
+---
+layout: 'base.njk'
+---
+
+{% import 'layout/content/header/post_header.njk' as PostHeader with context %}
+
+<section>
+    <article className="rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg">
+    <article class="rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg">
+        {{ PostHeader.PostHeader(title, createdAt, changedAt, author, heroImageUrl, tags) }}
+        <div class="p-5">
+            {{ content | safe }}
+        </div>
+    </article>
+</section>

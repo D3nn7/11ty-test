@@ -1,0 +1,24 @@
+{% import 'layout/content/components/post_title.njk' as PostTitle with context%}
+{% import 'layout/content/components/category_label_bar.njk' as CategoryLabelBar %}
+
+{% macro PostHeader(title, createdat, changedat, author = null, heroimageurl = null, categories = null) %}
+    {% if heroimageurl %}
+        <img
+                src={{heroimageurl}}
+                alt="Hero Image for {{title}}"
+                layout="responsive"
+                width="400"
+                height="225"
+            />
+    {% endif %}
+    {{ PostTitle.PostTitle(title, createdat, changedat, author) }}
+    {{ CategoryLabelBar.CategoryLabelBar(categories) }}
+{% endmacro %}
+
+{% macro PostHeaderWithoutAuthor(title, createdat, changedat, heroimageurl, categories) %}
+    {{ PostHeader(title, createdat, changedat, '', heroimageurl, categories) }}
+{% endmacro %}
+
+{% macro SimplePostHeader(title, createdat = null, changedat = null) %}
+    {{ PostHeader(title, createdat, changedat) }}
+{% endmacro %}

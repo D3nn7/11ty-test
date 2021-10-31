@@ -1,0 +1,21 @@
+{% macro DateInfo(createdat, changedat) %}
+    {% set createdAtDate = null %}
+    {% set changedAtDate = null %}
+    {% set dateInfo = null %}
+
+    {% if createdat or changedat %}
+        {% if createdat %}
+            {% set createdAtDate = createdat | defaultDateFormat %}
+        {% endif %}
+        {% if changedat %}
+            {% set changedAtDate = changedat | defaultDateFormat %}
+        {% endif %}
+        {% if createdAtDate and changedAtDate %}
+            <h6>Last update: <acronym title="Created: {{createdAtDate}}">{{changedAtDate}}</acronym></h6>
+        {% elif changedAtDate %}
+            <h6>Last update: {{changedAtDate}}</h6>
+        {% elif createdAtDate %}
+            <h6>Last update: {{createdAtDate}}</h6>
+        {% endif %}
+    {% endif %}
+{% endmacro %}

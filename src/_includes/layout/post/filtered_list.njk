@@ -1,0 +1,21 @@
+{% import 'layout/content/components/category_label_bar.njk' as CategoryLabelBar %}
+{% for post in collections[collectionTag] %}
+  <article class="rounded-lg transform hover:scale-103 duration-300 motion-reduce:transform-none bg-white shadow-lg overflow-hidden mb-8 md:flex md:flex-wrap">
+      <div class="w-full md:w-1/3">
+        <img
+          src="{{post.url}}{{post.data.thumbnail}}"
+          alt="Thumbnail for {{post.data.title}}"
+          layout="responsive"
+          width="200"
+          height="200"
+        />
+      </div>
+      <div class="p-4 w-full md:w-2/3">
+        <h3 class="block mb-2 border-gray-100 border-b-2">
+          <a href="{{ post.url }}" class="block hover:underline">{{ post.data.title }}</a>
+        </h3>
+        {{ CategoryLabelBar.CategoryLabelBar(post.data.tags) }}
+        <p>{{post.data.excerpt}}</p>
+      </div>
+    </article>
+{% endfor %}

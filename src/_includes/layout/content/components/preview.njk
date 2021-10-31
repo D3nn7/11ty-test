@@ -1,0 +1,14 @@
+{% macro AuthorPreview(author = null) %}
+    {% if author %}
+      {% for member in collections.team %}
+        {% if member.fileSlug == author %}
+            <div class="p-2 pl-0 flex items-center">
+                {% if member.data.avatar %}
+                    <img src="{{member.url}}{{member.data.avatar}}" layout="fixed" width="50" height="50" alt="Avatar of {{member.data.title}}" title="Avatar of {{member.data.title}}" class="rounded-full border border-gray-100 shadow-sm"/>
+                {% endif %}
+                <a href="{{member.url}}" class="ml-2 hover:underline"><h6>{{member.data.title}}</h6></a>
+            </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+{% endmacro %}

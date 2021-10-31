@@ -1,0 +1,8 @@
+{% for box in collections[colletionTag] %}
+    <article class="rounded-lg transform hover:scale-103 duration-300 motion-reduce:transform-none bg-white shadow-lg overflow-hidden mb-8 md:w-2-cards-in-row xl:w-4-cards-in-row">
+        <div class="p-5">
+            <a href={{box.url}} class="block mb-2 border-gray-100 border-b-2 break-all hover:underline"><h3 class="block">{{box.data.title}} </h3></a>
+            <p>{{box.data.excerpt}}</p>
+        </div>
+    </article>
+{% endfor %}

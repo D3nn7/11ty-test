@@ -1,0 +1,14 @@
+---
+layout: 'base.njk'
+---
+
+{% import 'layout/content/header/post_header.njk' as PostHeader %}
+
+<section>
+    <article class="rounded-lg rounded-tl-none rounded-tr-none bg-white shadow-lg">
+        {{ PostHeader.SimplePostHeader(title, createdAt, changedAt) }}
+        <div class="p-5">
+            {{ content | safe }}
+        </div>
+    </article>
+</section>

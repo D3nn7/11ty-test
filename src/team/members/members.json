@@ -1,0 +1,4 @@
+{
+    "tags": "team",
+    "layout": "layout/team/member.njk"
+}

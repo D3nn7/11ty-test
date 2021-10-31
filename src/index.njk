@@ -1,0 +1,19 @@
+---
+title: Welcome
+layout: base.njk
+templateEngineOverride: njk
+---
+{% import 'layout/card/main_card.njk' as MainCard %}
+{% import 'layout/card/sub_card.njk' as SubCard %}
+
+{{ MainCard.MainCard() }}
+<section class="md:flex md:flex-wrap md:gap-3 lg:gap-5">
+    {{ SubCard.SubCard("Team", "Who is behind our page?", thumbnailurl='', "/team") }}
+    {{ SubCard.SubCard("Offer 1", "This is about offer 1", thumbnailurl='', "/offers/offergroup1") }}
+    {{ SubCard.SubCard("Offer 2", "This is about offer 2", thumbnailurl='', "/offers/offergroup2") }}
+    {{ SubCard.SubCard("FAQ", "Frequently asked questions", thumbnailurl='', "/faq") }}
+</section>
+<section class="blogPostList">
+    <h2>Our latest news</h2>
+    {% include "layout/post/blogpostlist.njk" %}
+</section>
