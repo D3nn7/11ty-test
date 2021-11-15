@@ -1,9 +1,10 @@
 {
   "scripts": {
     "tailwind:process": "npx postcss css/global.css -o src/_includes/styles/global.css --watch",
+    "tailwind:build": "npx postcss css/global.css -o src/_includes/styles/global.css",
     "start": "concurrently \"npm run tailwind:process\" \"npm run serve\"",
     "serve": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "concurrently \"npm run tailwind:build\" \"npx @11ty/eleventy\""
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
