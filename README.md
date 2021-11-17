@@ -22,3 +22,5 @@ You can find the license under [LICENSE](./LICENSE).
 
 ## Author(s)
 [@DanielKraemer](https://github.com/DanielKraemer)
+
+[@D3nn7](https://github.com/D3nn7)
