@@ -1,3 +1,5 @@
+[![Build and Deploy](https://github.com/D3nn7/11ty-test/actions/workflows/github-pages.yml/badge.svg)](https://github.com/D3nn7/11ty-test/actions/workflows/github-pages.yml)
+
 # 11ty-test
 Test for static generated page using 11ty.js
 
